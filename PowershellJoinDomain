@@ -1,0 +1,24 @@
+Write-Host "You are about to join this machine to the network."
+Write-Host "Please press the Enter key to continue:"
+Pause
+
+Activates Windows 7/8 client with a software product key
+Write-Host "Activating Windows 7"
+cd C:
+cscript c:\windows\system32\slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+cscript c:\windows\system32\slmgr.vbs -ato
+
+Write-Host "Joining machine to AD..."
+Add-Computer -DomainName yourdomain.com.au -Credential domain\domain_authenticatedUserAccount
+
+Write-Host "Updating the Group Policy..."
+Pause
+
+Forces the update of the group policy on the machine
+gpupdate /force
+
+Write-Host "Machine will now restart to apply computer settings."
+Pause
+
+Restarts the machine with no timer
+Restart-Computer -Force

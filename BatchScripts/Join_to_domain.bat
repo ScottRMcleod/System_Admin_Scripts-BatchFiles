@@ -1,5 +1,5 @@
 echo off
-echo Your are about to join this machine the the eraring energy network 
+echo Your are about to join this machine the network 
 echo Please Press the enter button to continue:
 pause
 REM Activates Windows 78 Client with Software Product Key
